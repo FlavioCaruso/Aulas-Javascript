@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Aula 6 - Javascript</title>
+    </head>
+    <body>
+        <script>
+            // Operadores lógicas e Armazenamento em variáveis
+            // AND, OR, NOT
+
+            var sexo = "M", idade = 23;
+
+            // AND - Os 2 precisam atender os requisitos do if
+            if (sexo === 'M' && idade >= 18){
+                console.log("Ok");
+            }
+
+            // OR - Apenas um precisa atender os requisitos do if
+            if (sexo === 'M' || idade >= 33){
+                console.log("Ok");
+            }
+
+            // NOT - Desigualdade
+            if (sexo !== 'M'){
+                console.log('Ok')
+            }
+
+            // Armazena valor da condição na variável - primeira forma
+            var masculino;
+            if (sexo === 'M'){
+                masculino = true;
+            } else{
+                masculino = false;
+            }
+            console.log(masculino)
+
+            // Armazena valor da condição na variável - Forma mais simples
+            var sexo1 = 'F';
+            var feminino = sexo1 === 'F';
+            console.log(feminino)
+
+        </script>
+    </body>
+</html>

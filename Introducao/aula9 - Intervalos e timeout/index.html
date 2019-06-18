@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Aula 9 - Javascript</title>
+    </head>
+    <body>
+        <script>
+            //Intervalos e timeout
+            //Intervalo - Função que executa varias vezes dentro de um intervalo
+            function exibeAlgo(){
+                console.log('Hello World')
+            }
+            function exibeAlgoTimeout(){
+                console.log('Hello Timeout')
+            }
+            // Para apenas referenciar a função e não executa-la, não inserir os parentes.
+            setInterval(exibeAlgo, 1000);
+            //SetTimeout executa a função após um delay determinado.
+            setTimeout(exibeAlgoTimeout, 5000);
+        </script>
+    </body>
+</html>

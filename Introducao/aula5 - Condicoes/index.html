@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Aula 5 - Javascript</title>
+    </head>
+    <body>
+        <script>
+            // Condicionais
+
+            function retornaSexo(sexo){
+                //M, F
+                //Masculino, Feminino
+
+                // If, else if, else
+                // == verifica se os valores são iguais 
+                // === verifica o valor e o tipo
+                if (sexo === 'M'){
+                    return "Masculino";
+                }else if (sexo === "F"){
+                    return "Feminino";
+                } else{
+                    return "Outro"
+                }
+            }
+
+            // Utilizando o Switch
+            function retornaSexoSwitch(sexo){
+                switch (sexo){
+                    case 'M':
+                        return "Masculino";
+                    case 'F':
+                        return "Feminino";
+                    default: 
+                        return "Outro";
+                }
+            }
+
+            var resultado = retornaSexo('M')
+            var resultado2 = retornaSexoSwitch('a')
+            console.log(resultado)
+            console.log(resultado2)
+        </script>
+    </body>
+</html>
