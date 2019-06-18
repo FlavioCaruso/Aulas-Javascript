@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Aula 2 - Javascript - Manipulação a DOM</title>
+    </head>
+    <body>
+        <div id="app">
+            <input type="text" name="nome">
+            <button class="botao">Adicionar</button>
+        </div>
+        <script>
+            //utilizando o querySelector para selecionar componentes o html
+            var inputElement = document.querySelector('input[name=nome]');
+            var btnElement = document.querySelector('button[class=botao]');
+
+            btnElement.onclick = function (){
+                var text = inputElement.value;
+                alert(text);
+            }
+        </script>
+    </body>
+</html>

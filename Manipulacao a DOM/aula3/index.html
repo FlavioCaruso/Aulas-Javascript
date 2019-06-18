@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Aula 2 - Javascript - Manipulação a DOM</title>
+    </head>
+    <body>
+        <div id="app">
+            <input type="text" id="nome">
+        </div>
+        <script>
+            // Criando o elemento
+            var linkElement = document.createElement('a');
+
+            // Criando os atributos desse elemento
+            linkElement.setAttribute('href', 'http://mba.butantan.gov.br');
+            linkElement.setAttribute('title', 'site MBA');
+
+            // inserindo um child dentro do elemento - um texto dentro do a href.
+            var textElement = document.createTextNode('Acessar MBA');
+            linkElement.appendChild(textElement);
+
+            // Inserindo o elemento dentro de um id utilizando o querySelector e appendChild.
+            var containerElement = document.querySelector('#app');
+            containerElement.appendChild(linkElement);
+            
+            // removendo o elemento dentro de um id usando removeChild.
+            var inputElement = document.querySelector('#nome');
+            containerElement.removeChild(inputElement);
+        </script>
+    </body>
+</html>
