@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Aula 1 - Javascript - Manipulação a DOM</title>
+    </head>
+    <body>
+        <!-- Quando clica com o mouse-->
+        <div id="app">
+            <button onclick="mostraAlerta()">Me pressione</button>
+        </div><br>
+
+        <!-- Quando passa o mouse por cima -->
+        <div id="outro">
+                <button onmouseover="mostraAlerta2()">Hover</button>
+        </div><br>
+
+        <!-- Quando pressiona uma tecla -->
+        <div id="outro">
+                <input type="text" onkeydown="mostraAlerta3()">
+        </div>
+
+        <script>
+          //Alertas
+          function mostraAlerta(){
+              alert('Botão foi clicado');
+          };
+
+          function mostraAlerta2(){
+              alert('Botão foi hover');
+          };
+
+          function mostraAlerta3(){
+              alert('pressionou uma tecla');
+          }
+        </script>
+    </body>
+</html>
