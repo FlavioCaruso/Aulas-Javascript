@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Exercicio Manipulação a DOM</title>
+    </head>
+    <body>
+        <button class="botao" >Clique Aqui</button>
+        <div id="app">
+
+        </div>
+        <script>
+            var btnElement = document.querySelector('button[class=botao]');
+
+            function getRandomColor() {
+                var letters = "0123456789ABCDEF";
+                var color = "#";
+                for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            };
+
+            btnElement.onclick = function(){
+                //Criando o elemento e o css desse elemento
+                var linkElement = document.createElement('div');
+                linkElement.style.width = 100;
+                linkElement.style.height = 100;
+                linkElement.style.backgroundColor = "#ff0000";
+                linkElement.style.marginTop = 10;
+
+                // Inserindo o elemento dentro de um id utilizando o querySelector e appendChild.
+                var containerElement = document.querySelector('#app');
+                containerElement.appendChild(linkElement);
+
+                linkElement.onmouseover = function(){
+                    var newColor = getRandomColor();
+                    linkElement.style.backgroundColor = newColor;
+                };
+            };
+            
+        </script>
+    </body>
+</html>
