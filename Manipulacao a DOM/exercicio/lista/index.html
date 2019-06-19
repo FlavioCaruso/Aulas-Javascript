@@ -3,33 +3,50 @@
         <title>Exercicio Manipulação a DOM</title>
     </head>
     <body>
+        <input type="text" name="nome">
+        <button onClick="adicionar()">Adicionar</button>            
         <div id="app">
             <ul class="lista"></ul>
         </div>
         <script>
-            var nomes = ["Diego", "Gabriel", "Lucas"];
-            //Especificando a classe
-            var ulElement = document.querySelector('ul[class=lista]');
-           
-           //Criando um elemento dentro da classe
+            var nomes = ["Flavio", "Renan"];
+            // definindo o input como variavel
+            var inputElement = document.querySelector('input[name=nome]');
 
-           var listaElements = function(){
-               for (nome of nomes){
+            //definindo a ul como variavel
+            var containerElement = document.querySelector('ul[class=lista]');
 
-                    //Criando a li 
-                    var liElement = document.createElement('li');
-                    //Inserindo a li dentro da ul
-                    ulElement.appendChild(liElement);
+            var domElement = function(x){
+                // cria o elemento li dentro da variavel listaNome
+                var listaNome = document.createElement('li');
+                // cria o texto dentro da li e recebe lista
+                var textElement = document.createTextNode(x);
 
-                    //Criando o texto e inserindo os nomes da lista
-                    var textElement = document.createTextNode(nome);
-                    //Inserindo os nomes dentro da li
-                    liElement.appendChild(textElement);
-               }
-           }
-           listaElements();
+                // Insere a li dentro da ul
+                containerElement.appendChild(listaNome);
 
+                // Insere o texto com a lista dentro da li
+                listaNome.appendChild(textElement);
+            }
+            
+            //Cria a lista para os elementos ja existentes
+            for (let nome of nomes){
+                domElement(nome);
+            }
+                
+            var adicionar = function(){
+                //Recebe o valor do Input
+                inputNome = inputElement.value;
 
+                //Passa o valor do input para a lista
+                nomes.push(inputNome)
+
+                domElement(inputNome);
+
+                // limpa o input
+                inputElement.value = '';
+
+            }
         </script>
     </body>
 </html>
