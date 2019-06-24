@@ -5,11 +5,9 @@ var inputElement = document.querySelector('#app input');
 // Adicionando o botão a um elemento
 var buttonElement = document.querySelector('#app button');
 
-var todos = [
-    'fazer café', 
-    'estudar javascript',
-    'comer'
-];
+// Cria a variavel todos pegando os itens que estão no localStorage em array
+var todos = JSON.parse(localStorage.getItem('list_todos')) || [];
+
 
 // Renderiza os Todos
 function renderTodos(){
@@ -66,6 +64,9 @@ function addTodo(){
 
     //Executa a função
     renderTodos();
+
+    //Executa a função
+    saveToStorage();
 }
 
 //Executa a função addTodo quando o botao é pressionado
@@ -79,4 +80,12 @@ function deleteTodo(pos){
 
     //Executa a função
     renderTodos();
+
+    //Executa a função
+    saveToStorage();
+}
+
+//Função que salva o item dentro do local Storage e transforma em string
+function saveToStorage() {
+    localStorage.setItem('list_todos', JSON.stringify(todos));
 }
