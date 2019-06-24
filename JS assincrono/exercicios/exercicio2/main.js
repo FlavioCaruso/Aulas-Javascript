@@ -13,21 +13,33 @@ var domElement = function(dados){
 
     // Insere o texto com a lista dentro da li
     listaNome.appendChild(textElement);
-    console.log(dados)
 }
 
 btnElement.onclick = function (){
+    var listaNome = document.createElement('li');
+    var carregando = function(){
+        var textElement = document.createTextNode("Carregando...");
+        containerElement.appendChild(listaNome);
+        listaNome.appendChild(textElement);
+    }
+
+            
+  
     var usuario = inputElement.value;
-    axios.get('https://api.github.com/users/'+ usuario +'/repos')
+    console.log(usuario)
+    carregando();
+    axios.get("https://api.github.com/users/" + usuario + "/repos")
     .then(function(response) {
         let dados = response.data;
-        //Cria a lista para os elementos ja existentes
-        for (let dado of dados){
-            domElement(dado);
+        containerElement.removeChild(listaNome);
+        for (let data of dados){
+            domElement(data);
         }
     })
     .catch(function(error){
-        console.warn(error)
+        if(error.response.status === 404){
+            alert("Usuário não encontrado");
+            inputElement.value = '';
+        }
     });
-
 }
